@@ -40,7 +40,7 @@ Bunu yaparken,
 * imperatif şekilde yani docker cli kullanarak bunu gerçekleştirin,
 * kullanıcı adı, şifre ve veritabanı isimlerini ortam değişkeni siz belirleyin
 * bilgisayarınızın portundan erişebilir yapın,
-* Bilgisayarınızda bir dizin oluşturun ve bu dizini ./postgres-data olarak isimlendirin. Bu dizinde postgresql data dizinini saklayın. Böylece container silinse de data dizininiz kaybolmasın.
+* Bu repo'da bir dizin oluşturun ve bu dizini postgres-data olarak isimlendirin. Bu dizinde postgresql datasını saklayın. Böylece container silinse de data dizininiz kaybolmasın.
 * init-scripts ile database'i kaldırırken bir takım db initialize işlemlerini gerçekleştir. ????
 ```
 -- init-scripts/01-init.sql
