@@ -41,22 +41,7 @@ Bunu yaparken,
 * kullanıcı adı, şifre ve veritabanı isimlerini ortam değişkeni siz belirleyin
 * bilgisayarınızın portundan erişebilir yapın,
 * Bu repo'da bir dizin oluşturun ve bu dizini postgres-data olarak isimlendirin. Bu dizinde postgresql datasını saklayın. Böylece container silinse de data dizininiz kaybolmasın.
-* init-scripts ile database'i kaldırırken bir takım db initialize işlemlerini gerçekleştir. ????
-```
--- init-scripts/01-init.sql
-CREATE TABLE IF NOT EXISTS items (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    description TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Örnek veriler
-INSERT INTO items (name, description) VALUES
-    ('Item 1', 'First sample item'),
-    ('Item 2', 'Second sample item'),
-    ('Item 3', 'Third sample item');
-```
+* init-scripts ile database'i kaldırırken bir takım db initialize işlemlerini gerçekleştir. 
 
 2. Kaynak kodu verilen python scriptinden bir docker imajı oluştur. Bu docker imajı oluştururken;
 İpucu:  Ana referans olarak python:3.9-slim imajını al, FLASK_APP=app.py ve FLASK_ENV=development olmak üzere iki adet ortam değişkeni tanımla. (20 puan)
