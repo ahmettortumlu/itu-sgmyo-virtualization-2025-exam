@@ -1,0 +1,36 @@
+version: '3.0'
+services:
+  web:
+    build: .
+    environment:
+        DB_HOST: postgres
+        DB_NAME: mydb
+        DB_USER: myuser
+        DB_PASSWORD: mypassword
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1024m
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    environment:
+        POSTGRES_DB: mydb
+        POSTGRES_USER: myuser
+        POSTGRES_PASSWORD: mypassword
+    ports:
+      - 226:5432
+    volumes:
+      - ./pData:/var/lib/postgresql/data
+      - ../init-scripts:/docker-entrypoint-initdb.d
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1024m
